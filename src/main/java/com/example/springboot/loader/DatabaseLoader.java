@@ -16,13 +16,12 @@ public class DatabaseLoader implements CommandLineRunner {
         this.categoryRepository = categoryRepository;
     }
 
-
     @Override
-    public void run(String... args) throws Exception {
+    public  void run(String... args) throws  Exception{
         if(this.categoryRepository.count()==0)
         {
-            this.categoryRepository.save(new Category("Ковбаса"));
-            this.categoryRepository.save(new Category("Сало"));
+            this.categoryRepository.save(new Category("Food"));
+            this.categoryRepository.save(new Category("Smartphone"));
         }
     }
 }

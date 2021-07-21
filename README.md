@@ -10,4 +10,4 @@ http://localhost:8082/
 
 mvn package
 
-java -jar target\catapp.jar --server.port=8086
+java -jar target\cat_app.jar --server.port=8086
