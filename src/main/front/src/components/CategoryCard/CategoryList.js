@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { serverUrl } from '../../config';
 
 export default class CategoryList extends Component {
     state={
@@ -7,7 +8,8 @@ export default class CategoryList extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8082/api/categories")
+      console.log("server url", serverUrl);
+        fetch(`${serverUrl}api/categories`)
           .then(res => res.json())
           .then(
             (result) => {
