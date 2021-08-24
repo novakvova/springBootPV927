@@ -1,4 +1,4 @@
-package com.example.springboot.сonfigure;
+package com.example.springboot.configure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
