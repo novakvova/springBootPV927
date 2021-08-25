@@ -3,6 +3,7 @@ package com.example.springboot.controllers.api;
 import com.example.springboot.configure.security.JwtTokenUtil;
 import com.example.springboot.dto.AuthRequest;
 import com.example.springboot.dto.UserView;
+import com.example.springboot.mapper.UserMapper;
 import com.example.springboot.repositories.UserRepository;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +31,7 @@ public class AuthApi {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenUtil jwtTokenUtil;
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     @PostMapping("login")
     public ResponseEntity<UserView> login(@RequestBody @Valid AuthRequest request) {
@@ -42,8 +44,8 @@ public class AuthApi {
             User user = (User) authenticate.getPrincipal();
             com.example.springboot.entities.User dbUser = userRepository
                     .findByUsername(user.getUsername());
-            UserView userView = new UserView();
-            userView.setUsername(user.getUsername());
+            UserView userView = userMapper.UserToUserView(dbUser);// new UserView();
+            //userView.setUsername(user.getUsername());
             String token = jwtTokenUtil.generateAccessToken(dbUser);
             return ResponseEntity.ok()
                     .header(HttpHeaders.AUTHORIZATION, token)
