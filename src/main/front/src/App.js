@@ -1,14 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import CategoryList from './components/CategoryCard/CategoryList';
-import CreateCategory from './components/CategoryCard/CreateCategory';
 import HomePage from './components/Home';
 
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import LoginPage from './components/auth/Login';
 import RegisterPage from './components/auth/Register';
