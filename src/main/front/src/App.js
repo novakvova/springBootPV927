@@ -11,6 +11,10 @@ import LoginPage from './components/auth/Login';
 import RegisterPage from './components/auth/Register';
 import NavbarHome from './components/NavbarHome';
 
+import AddTutorial from "./components/tutorials/AddTutorial";
+import Tutorial from "./components/tutorials/Tutorial";
+import TutorialsList from "./components/tutorials/TutorialsList";
+
 function App() {
   return (
 
@@ -27,6 +31,10 @@ function App() {
           <Route path="/register">
             <RegisterPage />
           </Route>
+
+          <Route exact path={["/tutorials"]} component={TutorialsList} />
+          <Route exact path="/add" component={AddTutorial} />
+          <Route path="/tutorials/:id" component={Tutorial} />
         </Switch>
       </div>
     </Router>

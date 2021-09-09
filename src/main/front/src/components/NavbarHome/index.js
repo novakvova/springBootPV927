@@ -16,6 +16,12 @@ export class NavbarHome extends Component {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/">Головна</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" aria-current="page" to="/tutorials">Туторіал</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" aria-current="page" to="/add">Додати</Link>
+                            </li>
                         </ul>
                         <ul className="navbar-nav">
 
