@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
+import TextFieldGroup from '../../common/TextFiedGroup';
 
-export class RegisterPage extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Реєстрація на сайті</h1>
-            </div>
-        )
-    }
+
+const RegisterPage = () => {
+    return (
+        <div>
+            <h1>Реєстрація на сайті</h1>
+            <TextFieldGroup />
+        </div>
+
+    );
 }
 
 export default RegisterPage

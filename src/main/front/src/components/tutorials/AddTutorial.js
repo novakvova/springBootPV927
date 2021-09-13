@@ -3,22 +3,29 @@ import { useDispatch } from "react-redux";
 import { createTutorial } from "../../actions/tutorials";
 
 const AddTutorial = () => {
+
   const initialTutorialState = {
     id: null,
     title: "",
     description: "",
     published: false
   };
+  //ми в компонеті робимо стейт, елемент стейту tutorial
   const [tutorial, setTutorial] = useState(initialTutorialState);
+
+  //ми зробили елемент стейту, submitted - фіксує відправку форми
   const [submitted, setSubmitted] = useState(false);
 
+  //Зміна відповідає за dispatch - Redux
   const dispatch = useDispatch();
 
+  //стрелочна функція, яка міняє значення в стейті текстових полів
   const handleInputChange = event => {
     const { name, value } = event.target;
     setTutorial({ ...tutorial, [name]: value });
   };
 
+  //зберігаємо дані про туторіал
   const saveTutorial = () => {
     const { title, description } = tutorial;
 
@@ -64,7 +71,7 @@ const AddTutorial = () => {
               required
               value={tutorial.title}
               onChange={handleInputChange}
-              name="title"
+              name="title" //
             />
           </div>
 
