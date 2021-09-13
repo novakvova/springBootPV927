@@ -14,7 +14,7 @@ java -jar target\cat_app.jar --server.port=8086
 
 mvn clean package
 
-java -jar target/cat_app.jar
+java -jar target/cat_app.jar --server.port=8086
 
 http://localhost:8082/
 
