@@ -14,6 +14,7 @@ import NavbarHome from './components/NavbarHome';
 import AddTutorial from "./components/tutorials/AddTutorial";
 import Tutorial from "./components/tutorials/Tutorial";
 import TutorialsList from "./components/tutorials/TutorialsList";
+import { ValidForm } from './components/ValidForm';
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
           </Route>
           <Route path="/register">
             <RegisterPage />
+          </Route>
+
+          <Route path="/valid">
+            <ValidForm />
           </Route>
 
           <Route exact path={["/tutorials"]} component={TutorialsList} />

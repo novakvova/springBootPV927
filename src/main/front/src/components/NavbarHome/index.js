@@ -22,6 +22,9 @@ export class NavbarHome extends Component {
                             <li className="nav-item">
                                 <Link className="nav-link" aria-current="page" to="/add">Додати</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" aria-current="page" to="/valid">Валідація</Link>
+                            </li>
                         </ul>
                         <ul className="navbar-nav">
 
