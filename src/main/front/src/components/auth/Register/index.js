@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
 
 import TextFieldGroup from '../../common/TextFiedGroup';
+import PasswordFiedGroup from '../../common/PasswordFiedGroup';
 import { formOptions } from './validation';
 
 
@@ -21,6 +22,7 @@ const RegisterPage = () => {
     }
 
     const [values, setValues] = useState(initialState);
+
     //const [errors, setErrors] = useState(initialErrorState);
 
 
@@ -32,11 +34,6 @@ const RegisterPage = () => {
 
 
     const dispatch = useDispatch();
-
-    const onChangeInputHandler = (e) => {
-        var target = e.target;
-        setValues({ ...values, [target.name]: target.value });
-    }
 
     function onSubmit(data) {
         // display form data on success
@@ -65,11 +62,32 @@ const RegisterPage = () => {
                         onChange={onChangeInputHandler}
                     /> */}
 
-                    <div className="form-group col">
+                    {/* <div className="form-group col">
                         <label>Email</label>
                         <input name="email" type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                         <div className="invalid-feedback">{errors.email?.message}</div>
-                    </div>
+                    </div> */}
+
+                    <TextFieldGroup
+                        field="email"
+                        label="Електронна пошта"
+                        register = {register}
+                        error={errors.email}
+                    />
+
+                    <PasswordFiedGroup
+                        field="password"
+                        label="Пароль"
+                        register = {register}
+                        error={errors.password}
+                    />
+
+                    <PasswordFiedGroup
+                        field="confirmPassword"
+                        label="Повтор пароля"
+                        register = {register}
+                        error={errors.confirmPassword}
+                    />
 
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary mr-1">Register</button>
